@@ -14,5 +14,5 @@ void init_map(Map_t *map);
 int can_be_placed(Map_t map, int x, int y);
 int can_be_placed_around(Map_t map, int x, int y);
 int can_ship_be_placed(Map_t map, Ship_t ship, int x, int y, int v);
-void place_ship(Map_t map, Ship_t ship, int x, int y, int v);
+void place_ship(Map_t *map, Ship_t ship, int x, int y, int v);
 Field_t get_field_at_position(Map_t map, int x, int y);
