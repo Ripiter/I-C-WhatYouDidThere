@@ -41,7 +41,7 @@ int main() {
 	} while (!can_ship_be_placed(map, ship, x, y, v));
 	
 
-	place_ship(map, ship, x, y, v);
+	place_ship(&map, ship, x, y, v);
 	printf("\n");
 	draw_map();
 	//int res = can_ship_be_placed(map, ship, 9, 5, v);
