@@ -53,13 +53,13 @@ int can_ship_be_placed(Map_t map, Ship_t ship, int x, int y, int v)
 	return 1;
 }
 
-void place_ship(Map_t map, Ship_t ship, int x, int y, int v)
+void place_ship(Map_t *map, Ship_t ship, int x, int y, int v)
 {
 	for (int i = 0; i < ship.shipLenght; i++)
 	{
 		if (v == 1)
 		{
-			Field_t f = get_field_at_position(map, x + i, y);
+			Field_t *f = &map->fieldMap[x + i][y]
 			assign_ship_to_field(f, ship);
 		}
 		else
