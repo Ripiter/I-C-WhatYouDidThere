@@ -10,4 +10,4 @@ struct Field {
 };
 
 
-void assign_ship_to_field(Field_t field, Ship_t ship);
+void assign_ship_to_field(Field_t *field, Ship_t ship);
