@@ -59,12 +59,12 @@ void place_ship(Map_t *map, Ship_t ship, int x, int y, int v)
 	{
 		if (v == 1)
 		{
-			Field_t *f = &map->fieldMap[x + i][y]
+			Field_t *f = &map->fieldMap[x + i][y];
 			assign_ship_to_field(f, ship);
 		}
 		else
 		{
-			Field_t f = get_field_at_position(map, x, y + i);
+			Field_t *f = &map->fieldMap[x][y + i];
 			assign_ship_to_field(f, ship);
 		}
 	}
