@@ -25,23 +25,18 @@ int main() {
 	int x = 0;
 	int y = 0;
 
-	char userInput[3];
-	
+	char *userInput;
+	userInput = malloc(10);
+
 	do {
-		printf("x: ");
+		printf("\nx: ");
 		x = atoi(get_user_input(userInput));
 
 		printf("y: ");
 		y = atoi(get_user_input(userInput));
-		printf("v(0/1):  ");
+		printf("v(0/1): ");
 		v = atoi(get_user_input(userInput));
 
-		//printf("x: ");
-		//x = 0;
-		//printf("y: ");
-		//y = 0;
-		//printf("v(0/1):  ");
-		//v = 0;
 
 	} while (!can_ship_be_placed(map, ship, x, y, v));
 	
@@ -52,13 +47,14 @@ int main() {
 	//int res = can_ship_be_placed(map, ship, 9, 5, v);
 
 	//printf("result %i\n", res);
-	destroy_fields(map);
-	free(map);
+	destroy_map(map);
+
+	free(userInput);
 	return 0;
 }
 
-char* get_user_input(char input[]) {
-	fgets(input, 50, stdin);
+char* get_user_input(char *input) {
+	fgets(input, sizeof(input), stdin);
 	input[strcspn(input, "\n")] = 0;
 
 	return input;
