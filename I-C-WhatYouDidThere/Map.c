@@ -85,6 +85,7 @@ Field_t* get_field_at_position(Map_t* map, int x, int y)
 	return map->fieldMap[x][y];
 }
 
+
 void destroy_map(Map_t* map)
 {
 	for (int x = 0; x < MAP_WIDTH; x++)

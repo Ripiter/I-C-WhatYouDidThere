@@ -11,6 +11,9 @@ struct Map {
 	Field_t *fieldMap[MAP_WIDTH][MAP_HEIGHT];
 };
 
+void test(Field_t** map);
+void test2(Field_t* map);
+
 Map_t *init_map(Map_t *map);
 int can_be_placed(Map_t *map, int x, int y);
 int can_be_placed_around(Map_t *map, int x, int y);

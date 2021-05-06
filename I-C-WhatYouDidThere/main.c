@@ -2,13 +2,12 @@
 #include <stdlib.h>
 #include "Map.h"
 
-void draw_map();
-char* get_user_input();
-
-
+void draw_map(Map_t* map);
+char* get_user_input(char* input);
 
 int main() {
-	Map_t *map = malloc(sizeof(Map_t));
+
+	Map_t* map = malloc(sizeof(Map_t));
 	map = init_map(map);
 
 	draw_map(map);
@@ -25,7 +24,7 @@ int main() {
 	int x = 0;
 	int y = 0;
 
-	char *userInput;
+	char* userInput;
 	userInput = malloc(10);
 
 	do {
@@ -39,17 +38,16 @@ int main() {
 
 
 	} while (!can_ship_be_placed(map, ship, x, y, v));
-	
+
 
 	place_ship(map, ship, x, y, v);
 	printf("\n");
 	draw_map(map);
-	//int res = can_ship_be_placed(map, ship, 9, 5, v);
 
-	//printf("result %i\n", res);
 	destroy_map(map);
 
 	free(userInput);
+
 	return 0;
 }
 
